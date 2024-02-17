@@ -24,8 +24,8 @@ app.post('/merge', upload.array('pdfs', 2), async (req, res, next)=> {
     // req.files is array of `photos` files
     // req.body will contain the text fields, if there were any
     console.log(req.files)
-    await merge(path.join(__dirname, req.files[0].path), path.join(__dirname, req.files[1].path))
-    res.redirect("http://localhost:3001/static/merged.pdf")
+    let d = await merge(path.join(__dirname, req.files[0].path), path.join(__dirname, req.files[1].path))
+    res.redirect(`http://localhost:3001/static/${d}.pdf`)
 
 
 })
