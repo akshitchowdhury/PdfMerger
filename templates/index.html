@@ -48,10 +48,11 @@
       </nav>
     <h1>Pdfx - your Favorite Pdf merger tool</h1>
     <div class="container">
-        <form>
+        <form method="post" action="/merge" enctype="multipart/form-data">
             <div class="form-group">
               <label for="exampleFormControlFile1">Select the pdf files you want to merge</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple accept="pdf">
+              <input type="file" name="pdfs" class="form-control-file" id="exampleFormControlFile1" multiple accept="pdf">
+                <input class="btn btn-primary my-4" type="submit" value="submit"></input>
             </div>
           </form>
     </div>
